@@ -1,0 +1,165 @@
+* {
+    font-family:        'Open Sans', sans-serif;
+	margin:		0;
+	padding:	0;
+}
+html,body {
+    background-color:   #d9d9d9;
+    height:             100%;
+}
+body {
+ 
+}
+section {
+    margin:					0 auto;
+	width:					960px;
+    height:             	100%;
+    border:             	1px black;
+    background-color:   	#EBECED;
+}
+.header{
+	background-image:		url(../img/ys3mhz.png);
+	background-repeat:		repeat-y;
+	border-bottom:			2px solid #D1D6E0;
+	box-shadow: 			0 2px 2px rgba(0,0,0,.25);
+	padding:				0 0 10px 0;
+	width:					100%;
+	position:				fixed;
+}
+
+.logo{
+	float:					left;
+	margin:					10px 0 0 10px;
+}
+
+.logo img, .logo h1{
+	float:					left;
+	border-radius: 			30px;
+	margin:					0 0 0 10px;
+}
+
+.logo h1{
+	position: 				left;
+	font-size:				1.75em;
+	top:					4px;
+	left:					0px;
+}
+
+.logo h1 a{
+	color:					#D5DAE3;
+	font-weight:			600;
+	text-decoration: 		none;
+}
+
+.logo h1 a:hover{
+	color:					#FFFFFF;
+}
+
+.navigation{
+	float:					right;
+	margin-top: 			10px;
+}
+
+.navigation li{
+	display: 				inline-block;
+}
+
+.navigation a
+{
+	color:					#D1D6E0;
+	display: 				block;
+	font-size:				1.1em;
+	font-weight: 			400;
+	padding:				0 20px;
+	margin:					10px 0 0 10px;
+	padding-right: 			20px;
+	text-decoration: 		none;
+}
+
+.navigation a:hover{
+	color:					#FFFFFF;
+}
+
+.papel{
+	padding:	100px;
+
+}
+#content {
+	margin-bottom: 		40px;
+	padding: 			120px 0 0 30px;
+    margin:             0px 0 0 0;
+}
+#content h2 {
+    font-size:          20px;
+    font-weight:        600;
+}
+#content h3 {
+    font-size:          16px;
+    font-weight:        400;
+}
+#content a:visited {
+    border:             none;
+}
+#content a:hover {
+    border:             1px black;
+}
+#desc {
+    padding:             0 0 0 30px;
+}
+#desc h2 {
+    font-weight:        400;
+}
+#desc p {
+    font-weight:        200;
+    padding:            0 0 0 10px;
+}
+.createbutton a
+{
+	background-color: 		#4580FF;
+	border-radius: 			4px;
+	color:					#eee;
+	font:					1em "Ubuntu";
+	margin:					0 10px;
+	padding: 				10px;
+	text-align: 			center;
+	text-decoration: 		none;
+	text-shadow:			0 1px 0 #000;
+}
+
+.createbutton a:hover
+{
+	background-color: 		black;
+}
+#footer {
+    float:              left;
+    padding:            20px 0 0 30px;
+    font-size:          14px;
+    font-weight:        200;
+}
+input[type=text] {
+    padding:            2px; border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius:      5px;
+}
+input[type=text]:focus {border-color:#333; }
+
+input#test {
+    color:              #dfe7ea;
+    width:              250px;
+    padding:            3px 15px; 
+    background:         #0cbadf; 
+    border:             0 none;
+    cursor:             pointer;
+    -webkit-border-radius: 5px;
+    border-radius:      5px; 
+    -webkit-box-shadow: inset 0px 1px 0px 3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px 3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px 3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+}
+input#test:hover, input#test:focus {
+    color:              black;
+    -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+    -moz-box-shadow:    inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+    box-shadow:         inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}
+
