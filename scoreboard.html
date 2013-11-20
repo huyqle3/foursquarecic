@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Score Board</title>
+<link rel="stylesheet" type="text/css" href="static/style.css">
+<script type="text/javascript" language="javascript">
+<!--
+function getScore( teamname ){
+	doj = document.getElementById( teamname ).innerHTML;
+	return doj-0;
+}
+
+function updateScore( teamname, scoretotal ){
+	teamname = teamname || "hometeam";
+	doj = document.getElementById( teamname );
+	doj.innerHTML = (scoretotal< 9?"0":"") + scoretotal;
+}
+
+function addScore( tname, pointsAwarded ){
+	theScore = getScore( tname.name );
+	switch( tname.value ){
+		case "+": theScore += pointsAwarded; break;
+		case "-": theScore -= pointsAwarded; break;
+		}
+	theScore = theScore < 0 ? 0 : theScore;
+ 	updateScore( tname.name , theScore );
+}
+
+//-->
+</script>
+
+</head>
+
+<body>
+<div class="header">
+			<div class="wrapper clear">
+				<div class="logo">
+					<a href="index.php"><img src="img/logo.png" height="40px" width="50px"/></a>
+					<h1><a href="index.php">Check-In Challenge</a></h1>
+				</div>
+				<ul class="navigation">
+					<li><a href="#">Home</a></li>
+					<li><a href="scoreboard.html">My Challenges</a></li>
+					<li><a href="create.php">Create a Challenge</a></li>
+				</ul>
+			</div>
+	</div>
+	<br>
+	<section>
+	<div class="papel">
+<form id="form1" name="scoreboard" method="post" action="javascript:;" onsubmit="return false;">
+  <div style="float:left;"> 
+  <h1>How many points did you earn?</h1>
+  
+    <select name="pointScore">
+		<option value="0" selected >0<option value="1">1<option value="2">2<option value="3">3<option value="4">4<option value="5">5</select>
+<br>
+</br>
+Add to your score
+  <input name="hometeam" type="button" id="friend1" value="+" onclick="addScore( this , document.forms.scoreboard.pointScore.selectedIndex);" />
+<input name="hometeam" type="button" id="friend1" value="-" onclick="addScore( this , document.forms.scoreboard.pointScore.selectedIndex);" />
+  
+  <div class="style1" id="hometeam" style="width:150px;">00</div>
+Add to friend's score
+<input name="awayteam" type="button" id="friend2" value="+" onclick="addScore( this , document.forms.scoreboard.pointScore.selectedIndex);" />
+<input name="awayteam" type="button" id="friend2" value="-" onclick="addScore( this , document.forms.scoreboard.pointScore.selectedIndex);" />
+<div class="style1" id="awayteam" style="width:150px;">00</div>
+<br>
+<div class="info"><h1>Leaderboard</h1>
+<p>Points increase after comparing between the database and check-in with that your recent check-ins</p>
+</div>
+</div></form>
+</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" type="text/css" href="static/style.css">
+<script type="text/javascript">
+
+var $ = function (id)
+{
+  return document.getElementById(id);
+}
+ 
+ var sortItem = function(){
+    var myClassTag = document.getElementsByClassName("listitem");
+    //convert nodelist ot array
+    myClassTag     = Array.prototype.slice.call(myClassTag, 0);
+    //let the sort function sort it for you
+    myClassTag.sort(function(a, b){
+        return a.value > b.value ? 1 : -1;
+    });
+
+    var myToDoList = document.getElementById('todolist');
+    //update items position
+    update(myToDoList, myClassTag);
+}
+
+var doneItem = function(){
+    var myClassTag = document.getElementsByClassName("listitem");
+    //convert nodelist ot array
+    myClassTag     = Array.prototype.slice.call(myClassTag, 0);
+    //let the sort function sort it for you
+    myClassTag.sort(function(a, b){
+        return a.value > b.value ? 1 : -1;
+    });
+
+    var myToDoList = document.getElementById('todolist');
+    //update items position
+    update2(myToDoList, myClassTag);
+}
+
+//update items position, reappending will do the job
+function update(target, listOfItems){
+    for(var i = 0; i < listOfItems.length; i++){
+        target.appendChild(listOfItems[i]);
+    }
+}
+
+function update2(target, listOfItems){
+	var collection = db.collection('test');
+    for(var i = 0; i < listOfItems.length; i++){
+        target.appendChild(listOfItems[i]);
+		collection.save(listofItems[i]);
+    }
+	
+}
+
+var addItem = function(){
+     var myToDoList = document.getElementById('todolist');
+     var myInput    = document.createElement("input");
+
+     myInput.setAttribute("type", "text");
+     myInput.setAttribute("class", "listitem");
+     myToDoList.appendChild(myInput);
+
+     var myBr = document.createElement("br");
+     myToDoList.appendChild(myBr);
+}
+
+window.onload = function(){
+     document.getElementById('additem').addEventListener('click', addItem);
+     document.getElementById('sortitems').addEventListener('click', sortItem);
+	 document.getElementById('doneitems').addEventListener('click', doneItem);
+}
+</script>
+</head>
+<body>
+<div class="header">
+			<div class="wrapper clear">
+				<div class="logo">
+					<a href="index.php"><img src="img/logo.png" height="40px" width="50px"/></a>
+					<h1><a href="index.php">Check-In Challenge</a></h1>
+				</div>
+				<ul class="navigation">
+					<li><a href="#">Home</a></li>
+					<li><a href="scoreboard.html">My Challenges</a></li>
+					<li><a href="create.php">Create a Challenge</a></li>
+				</ul>
+			</div>
+	</div>
+	<section>
+	<div class ="papel">
+<h1>Make a new challenge by adding locations <span id='today'></span></h1>
+<br>
+    <div id="todolist">
+        <p><input type="button" id="additem" value="Add an area to checkin" /></p>
+		<br>
+    </div>
+<hr>
+
+<div>
+<br>
+    <p><input type="button" id="sortitems" value="Sort by alphabetical order" /></p>
+    <p id="displayitems"></p>
+	<br>
+	<p>Invite friends (separated by commas and a space) to compete in your challenge</p>
+	<input name="place" type="text" value="" id="place">
+	<br>
+	</br>
+	<p><form action ="scoreboard.html"><input type="submit" id="doneitems" value="Done" /></form></p>
+</div>
+</div>
+</section>
+</body>
+ </html>
